@@ -58,27 +58,36 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var inversify_express_utils_1 = require("inversify-express-utils");
-var TestController = /** @class */ (function (_super) {
-    __extends(TestController, _super);
-    function TestController() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var inversify_1 = require("inversify");
+var TypeOperacoes_1 = require("../Core/TypeOperacoes");
+var ResourceOperacao = /** @class */ (function (_super) {
+    __extends(ResourceOperacao, _super);
+    function ResourceOperacao(operacao) {
+        var _this = _super.call(this) || this;
+        _this.operacao = operacao;
+        return _this;
     }
-    TestController.prototype.calc = function () {
+    ResourceOperacao.prototype.calc = function (operador1, operador2, operando) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, ''];
+                return [2 /*return*/, this.operacao.calc(operador1, operador2, operando)];
             });
         });
     };
     __decorate([
+        inversify_1.inject('IOperacao'),
+        __metadata("design:type", Object)
+    ], ResourceOperacao.prototype, "operacao", void 0);
+    __decorate([
         inversify_express_utils_1.httpGet('/'),
         __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
+        __metadata("design:paramtypes", [Number, Number, String]),
         __metadata("design:returntype", Promise)
-    ], TestController.prototype, "calc", null);
-    TestController = __decorate([
-        inversify_express_utils_1.controller('/teste01')
-    ], TestController);
-    return TestController;
+    ], ResourceOperacao.prototype, "calc", null);
+    ResourceOperacao = __decorate([
+        inversify_express_utils_1.controller('/teste01'),
+        __metadata("design:paramtypes", [Object])
+    ], ResourceOperacao);
+    return ResourceOperacao;
 }(inversify_express_utils_1.BaseHttpController));
-exports.TestController = TestController;
+exports.ResourceOperacao = ResourceOperacao;

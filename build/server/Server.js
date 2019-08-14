@@ -18,6 +18,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var inversify_express_utils_1 = require("inversify-express-utils");
 var body_parser_1 = __importDefault(require("body-parser"));
+var morgan_1 = __importDefault(require("morgan"));
 // let server = new InversifyExpressServer(container)
 // server.setConfig((app) => {
 //   // add body parser
@@ -36,6 +37,7 @@ var Server = /** @class */ (function (_super) {
                 extended: true
             }));
             app.use(body_parser_1.default.json());
+            app.use(morgan_1.default('dev'));
         });
         return _this;
     }

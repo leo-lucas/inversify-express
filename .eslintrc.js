@@ -20,6 +20,8 @@ module.exports = {
     sourceType: "module"
   },
   rules: {
+    "no-useless-constructor": 2,
+    "@typescript-eslint/no-useless-constructor": 2,
     complexity: ["error", 5],
     "max-lines": ["error", 150],
     "no-var": "error",
@@ -31,4 +33,4 @@ module.exports = {
     "@typescript-eslint/interface-name-prefix": 0,
     "@typescript-eslint/no-empty-interface": 0
   }
-};
+}
