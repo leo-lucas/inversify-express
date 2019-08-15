@@ -3,7 +3,7 @@ import { IOperacao } from '@Port/IOperacao'
 import { injectable } from 'inversify'
 
 @injectable()
-export class Divicao implements IOperacao {
+export class Divisao implements IOperacao {
   public calcular (valor: number, valor2: number): number {
     this.validate(valor, valor2)
     return valor / valor2

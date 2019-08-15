@@ -9,10 +9,5 @@ export enum TypeOperacoes {
 export type operacoes ='div'|'mul'|'som'|'sub'
 
 export function getType (valor :operacoes) {
-  return {
-    div: TypeOperacoes.div,
-    mul: TypeOperacoes.mul,
-    som: TypeOperacoes.som,
-    sub: TypeOperacoes.sub
-  }[valor]
+  return TypeOperacoes[valor]
 }

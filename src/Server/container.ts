@@ -1,5 +1,5 @@
 import { Container } from 'inversify'
-import { Divicao } from '../Core/Divicao'
+import { Divisao } from '../Core/Divisao'
 import { Subtracao } from '../Core/Subtracao'
 import { Soma } from '../Core/Soma'
 import { Multiplicacao } from '../Core/Multiplicacao'
@@ -15,7 +15,7 @@ let container = new Container()
 
 // set up bindings
 container.bind<IResourceOperacao>('ResourceOperacao').to(ResourceOperacao)
-container.bind<IOperacao>('Operacao').to(Divicao)
+container.bind<IOperacao>('Operacao').to(Divisao)
 container.bind<IOperacao>('Operacao').to(Multiplicacao)
 container.bind<IOperacao>('Operacao').to(Soma)
 container.bind<IOperacao>('Operacao').to(Subtracao)
