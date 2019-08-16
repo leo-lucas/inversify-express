@@ -22,7 +22,10 @@
     "inversify": "^5.0.1",
     "inversify-express-utils": "^6.3.2",
     "morgan": "^1.9.1",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "swagger-express-ts": "^1.0.1",
+    "swagger-express-validator": "^1.0.0",
+    "swagger-ui-dist": "^3.23.5"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
