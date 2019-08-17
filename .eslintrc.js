@@ -4,10 +4,18 @@ module.exports = {
     es6: true,
     node: true
   },
-  plugins: ["@typescript-eslint"],
-  extends: [
+  "extends": [
+    "eslint:recommended",
+    "standard",
     "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
     "prettier/@typescript-eslint",
+    "prettier/standard"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
     "standard"
   ],
   globals: {
@@ -20,13 +28,13 @@ module.exports = {
     sourceType: "module"
   },
   rules: {
-    "no-useless-constructor": 2,
-    "@typescript-eslint/no-useless-constructor": 2,
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-parameter-properties": 0,
     complexity: ["error", 5],
     "max-lines": ["error", 150],
     "no-var": "error",
     "no-param-reassign": "error",
-    "max-lines-per-function": ["error", 30],
+    "max-lines-per-function": ["error", 40],
     "max-params": ["error", 4],
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/no-explicit-any": 1,
