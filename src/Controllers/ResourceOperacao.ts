@@ -58,21 +58,6 @@ export class ResourceOperacao extends BaseHttpController
     })
   }
 
-  @httpGet('/:operando')
-  public async calc2(
-    @requestParam('operando') operando: operacoes,
-    @queryParam('val1') operador1: string,
-    @queryParam('val2') operador2: string,
-  ) {
-    this.validateOperacao(operando)
-    return this.json({
-      valor: this.operacoes[getType(operando)].calcular(
-        Number(operador1),
-        Number(operador2),
-      ),
-    })
-  }
-
   public validateOperacao(operando: operacoes): boolean {
     if (['div', 'mul', 'som', 'sub'].includes(operando)) return true
     throw Error('Operador invalido')
